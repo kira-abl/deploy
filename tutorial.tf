@@ -1,7 +1,7 @@
 // Configuring the provider information
 provider "aws" {
     region = "us-west-2"
-    shared_credentials_files = ["/var/lib/jenkins/.aws/credentials"]
+    shared_credentials_files = ["/home/kira/.aws/credentials"]
 
 }
 
