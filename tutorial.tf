@@ -88,7 +88,7 @@ resource "aws_instance" "myWebOS" {
         }
     depends_on = [module.key_pair] # Ensure key pair is created first
         provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key ~/Desktop/${var.key_name}.pem -i '${aws_instance.myWebOS.public_ip},' master.yml"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ec2-user --private-key /home/kira/Desktop/${var.key_name}.pem -i '${aws_instance.myWebOS.public_ip},' master.yml"
   }
   
 }
