@@ -15,7 +15,7 @@ resource "tls_private_key" "ec2_private_key" {
   rsa_bits  = 4096
 
   provisioner "local-exec" {
-        command = "echo '${tls_private_key.ec2_private_key.private_key_pem}' > ~/Desktop/${var.key_name}.pem"
+        command = "echo '${tls_private_key.ec2_private_key.private_key_pem}' > ~/home/kira/Desktop/${var.key_name}.pem"
     }
 }
 
@@ -26,7 +26,7 @@ resource "null_resource" "key-perm" {
     ]
 
     provisioner "local-exec" {
-        command = "chmod 400 ~/Desktop/${var.key_name}.pem"
+        command = "chmod 400 ~/home/kira/Desktop/${var.key_name}.pem"
     }
 }
 
